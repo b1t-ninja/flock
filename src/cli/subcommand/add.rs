@@ -1,5 +1,4 @@
 use clap::Args;
-use std::process::Command;
 
 /// Adds a new dependency
 #[derive(Debug, Args)]
@@ -19,5 +18,6 @@ impl Add {
   pub fn run(&self) {
     // fetch dep package and product
     // add it to the Package.swift file
+    todo!()
   }
 }

@@ -16,7 +16,7 @@ pub enum SubCommand {
   Run(Run),
   Build(Build),
   Test(Test),
-  Add(Add)
+  Add(Add),
 }
 
 impl SubCommand {
