@@ -5,7 +5,6 @@ use std::process::Command;
 #[derive(Debug, Args)]
 pub struct New {
   /// The name of the project
-  #[arg(short, long)]
   pub name: String,
   /// Make the project a library
   #[arg(short, long)]
