@@ -1,4 +1,6 @@
-use crate::cli::subcommand::{new::New, run::Run};
+use std::str::Bytes;
+
+use crate::cli::subcommand::{build::Build, new::New, run::Run};
 use clap::{Parser, Subcommand};
 
 /// Handle Swift Projects with ease ❤
@@ -14,6 +16,7 @@ pub enum SubCommand {
   /// Creates a new project
   New(New),
   Run(Run),
+  Build(Build),
 }
 
 impl SubCommand {
@@ -21,6 +24,7 @@ impl SubCommand {
     match self {
       SubCommand::New(new_command) => new_command.run(),
       SubCommand::Run(new_command) => new_command.run(),
+      SubCommand::Build(new_command) => new_command.run(),
     }
   }
 }
