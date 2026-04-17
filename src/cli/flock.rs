@@ -1,6 +1,6 @@
 use std::str::Bytes;
 
-use crate::cli::subcommand::{build::Build, new::New, run::Run};
+use crate::cli::subcommand::{build::Build, new::New, run::Run, test::Test};
 use clap::{Parser, Subcommand};
 
 /// Handle Swift Projects with ease ❤
@@ -17,6 +17,7 @@ pub enum SubCommand {
   New(New),
   Run(Run),
   Build(Build),
+  Test(Test),
 }
 
 impl SubCommand {
@@ -25,6 +26,7 @@ impl SubCommand {
       SubCommand::New(new_command) => new_command.run(),
       SubCommand::Run(new_command) => new_command.run(),
       SubCommand::Build(new_command) => new_command.run(),
+      SubCommand::Test(new_command) => new_command.run(),
     }
   }
 }
