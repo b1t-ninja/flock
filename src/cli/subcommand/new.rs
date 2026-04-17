@@ -12,6 +12,7 @@ pub struct New {
   pub library: bool,
 }
 
+// TODO: Add dependency sections to new project (later)
 impl New {
   // Creates a new folder, 
   // and ceates a new swift project 

@@ -1,4 +1,4 @@
-use crate::cli::subcommand::new::New;
+use crate::cli::subcommand::{new::New, run::Run};
 use clap::{Parser, Subcommand};
 
 /// Handle Swift Projects with ease ❤
@@ -13,12 +13,14 @@ pub struct Flock {
 pub enum SubCommand {
   /// Creates a new project
   New(New),
+  Run(Run),
 }
 
 impl SubCommand {
   pub fn run(&self) {
     match self {
       SubCommand::New(new_command) => new_command.run(),
+      SubCommand::Run(new_command) => new_command.run(),
     }
   }
 }
