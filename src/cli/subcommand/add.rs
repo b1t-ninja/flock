@@ -6,16 +6,16 @@ pub struct Add {
   /// The name of the dependency
   pub name: String,
 
-  /// The minimum version of the dependency
+  /// The version of the dependency, defaults to latest
   #[arg(short, long)]
-  pub version: String,
+  pub version: Option<String>,
 }
 
 impl Add {
-  // Creates a new folder,
-  // and ceates a new swift project
-  // in that folder
   pub fn run(&self) {
+    if let Some(ver) = &self.version {
+
+    }
     // fetch dep package and product
     // add it to the Package.swift file
     todo!()

@@ -1,6 +1,8 @@
 use clap::Args;
 use std::process::Command;
 
+use crate::cli::util::dependency_manager::DependencyManager;
+
 /// Creates a new project
 #[derive(Debug, Args)]
 pub struct New {
@@ -13,8 +15,8 @@ pub struct New {
 
 // TODO: Add dependency sections to new project (later)
 impl New {
-  // Creates a new folder, 
-  // and ceates a new swift project 
+  // Creates a new folder,
+  // and ceates a new swift project
   // in that folder
   pub fn run(&self) {
     let project_type = match self.library {
@@ -38,5 +40,9 @@ impl New {
     if !status.success() {
       std::process::exit(status.code().unwrap_or(1));
     }
+
+    // sets up the initial dependency sections in Package.swift
+    let manager = DependencyManager::new();
+    manager.setup();
   }
 }
