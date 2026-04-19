@@ -13,6 +13,7 @@ pub struct Add {
   pub version: Option<String>,
 }
 
+// TODO: fetch the dep from server via name and use that to pass to add
 impl Add {
   pub fn run(&self) {
     if let Some(ver) = &self.version {}
