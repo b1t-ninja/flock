@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Dependency {
-  package: String,
-  product: String,
+  pub package: String,
+  pub product: String,
 }

@@ -13,11 +13,7 @@ pub struct New {
   pub library: bool,
 }
 
-// TODO: Add dependency sections to new project (later)
 impl New {
-  // Creates a new folder,
-  // and ceates a new swift project
-  // in that folder
   pub fn run(&self) {
     let project_type = match self.library {
       true => "library",
@@ -42,7 +38,7 @@ impl New {
     }
 
     // sets up the initial dependency sections in Package.swift
-    let manager = DependencyManager::new();
+    let manager = DependencyManager::new(self.name.clone());
     manager.setup();
   }
 }
